@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class SignPost : ActionItem
 {
+    public string[] dialogue;
+    public string signName;
     public override void interact()
     {
-        base.interact();
+        DialogueSystem.Instance.addNewDialogue(dialogue, signName);
         Debug.Log("Interacting with sign post");
     }
 }
